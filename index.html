@@ -304,7 +304,7 @@
                     <h1 class="title">Compass Control: Multi-Object Orientation Control for Text-to-Image Generation
                     </h1>
                     <h2 class="title">CVPR 2025</h2>
-                    <p class="author">Rishubh Parihar, Vaibhav Agrawal, Sachidanand VS, R. Venkatesh Babu</p>
+                    <p class="author">Rishubh Parihar, Vaibhav Agarwal, Sachidanand VS, R. Venkatesh Babu</p>
                     <p class="abstract">
                         Compass control enables precise and continuous object orientation control in text-to-image diffusion models. 
                         Given an input orientation angle along with a text prompt, our method can generate realistic scenes following the text prompts
@@ -362,10 +362,18 @@
     <!-- Animation samples for the left and right side generation  -->
     <div class="container blog main" style="display: flex; justify-content: center; gap: 50px;">
         <div style="flex: 1; display: flex; justify-content: center;">
-            <img src="assets/figures/animate-single1.gif" style="border: 2px solid rgb(198, 198, 198); border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px; max-width: 100%; height: auto;">
+            <video 
+                src="assets/figures/animate-single1.mp4" 
+                controls 
+                style="border: 2px solid rgb(198, 198, 198); border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px; width: 600px; height: auto;">
+            </video>
         </div>
         <div style="flex: 1; display: flex; justify-content: center;">
-            <img src="assets/figures/animate-single1.gif" style="border: 2px solid rgb(198, 198, 198); border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px; max-width: 100%; height: auto;">
+            <video 
+                src="assets/figures/animate-single2.mp4" 
+                controls 
+                style="border: 2px solid rgb(198, 198, 198); border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px; width: 600px; height: auto;">
+            </video>
         </div>
     </div>
 
@@ -443,25 +451,15 @@
     </div>
 
 
-    <!-- Code for block of multi-object generation and their orientation control.  -->
-    <!-- <div class="container blog main gray">
-        <div style="max-width: 1000px; margin: 0 auto 20px; text-align: justify;">
-            <p class ="text", style="text-align: justify">
-            Integrating call in Compass Control enables seamless generation of diverse multi-object scenes with accurate orientation control for individual objects. 
-            Further, the proposed framework generalizes exceptionally well, generating up to six-object scenes despite being trained on only up to two-object scenes.
-            </p>
+    <div class="container blog main" style="display: flex; justify-content: center; gap: 50px;">
+        <div style="flex: 1; display: flex; justify-content: center;">
+            <video 
+                src="assets/figures/animate-multiple.mp4" 
+                controls 
+                style="border: 2px solid rgb(198, 198, 198); border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px; width: 600px; height: auto;">
+            </video>
         </div>
-    
-        <div style="display: flex; justify-content: center; gap: 50px;">
-            <div style="flex: 1; display: flex; justify-content: center;">
-                <img src="assets/figures/animate-single1.gif" style="border: 2px solid rgb(198, 198, 198); border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px; max-width: 100%; height: auto;">
-            </div>
-            <div style="flex: 1; display: flex; justify-content: center;">
-                <img src="assets/figures/animate-single1.gif" style="border: 2px solid rgb(198, 198, 198); border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px; max-width: 100%; height: auto;">
-            </div>
-        </div>
-        <br>
-    </div> -->
+    </div>
 
 
     <!-- Additional static results with multiple objects from the main paper
