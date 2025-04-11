@@ -315,8 +315,8 @@
 
                 <div class="info">
                     <div>
-                        <a href="mainpaper.pdf" class="button icon" style="background-color: rgba(255, 255, 255, 0.25); margin-bottom: 0;">Paper<i class="fa-solid fa-book-open"></i></a>
-                        <a href="https://github.com/lorenmt/clarity-template" class="button icon" style="background-color: rgba(255, 255, 255, 0.25); margin-bottom: 0;">Code (coming soon)<i class="fa-solid fa-code"></i></a>
+                        <a href="mainpaper.pdf" class="button icon" style="border: 2px solid rgb(237, 223, 223); border-radius: 15px; box-shadow: 0px 0px 10px; background-color: rgba(255, 255, 255, 0.25); margin-bottom: 0;">Paper<i class="fa-solid fa-book-open"></i></a>
+                        <a href="https://rishubhpar.github.io/compasscontrol" class="button icon" style="border: 2px solid rgb(237, 223, 223); border-radius: 15px; box-shadow: 0px 0px 10px; background-color: rgba(255, 255, 255, 0.25); margin-bottom: 0;">Code (coming soon)<i class="fa-solid fa-code"></i></a>
                     </div>
                 </div>
             </div>
@@ -359,7 +359,17 @@
         </p>
     </div>
 
-    <div class="container blog extra-large gray-linear">
+    <!-- Animation samples for the left and right side generation  -->
+    <div class="container blog main" style="display: flex; justify-content: center; gap: 50px;">
+        <div style="flex: 1; display: flex; justify-content: center;">
+            <img src="assets/figures/animate-single1.gif" style="border: 2px solid rgb(198, 198, 198); border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px; max-width: 100%; height: auto;">
+        </div>
+        <div style="flex: 1; display: flex; justify-content: center;">
+            <img src="assets/figures/animate-single1.gif" style="border: 2px solid rgb(198, 198, 198); border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px; max-width: 100%; height: auto;">
+        </div>
+    </div>
+
+    <!-- <div class="container blog extra-large gray-linear">
         <h1 class="text" , style="text-align: center;">
             Take Control!
         </h1>
@@ -372,7 +382,6 @@
                     style="max-width: 300px; margin-bottom: 20px;">
 
 
-                <!-- Accessory Slider -->
                 <div class="dynamic-slider" data-slider-config='{
                      "prefix": "accessory", 
                      "min": 1, 
@@ -389,7 +398,6 @@
                     style="max-width: 300px; margin-bottom: 20px;">
 
 
-                <!-- Accessory Slider -->
                 <div class="dynamic-slider" data-slider-config='{
                      "prefix": "accessory", 
                      "min": 1, 
@@ -401,15 +409,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- Approach discussion and the approach figure -->
-    <div class="container blog main">
-        <h1 class="text" , style="text-align: center;">
-            Approach
-        </h1>
-
+    <div class="container blog main gray">
+        <h1 class="text" , style="text-align: center;">Method</h1>
         <p class="text" , style="text-align: justify;">
         We encode the object orientation as an additional attribute in the text embedding space of the T2I model. 
         Specifically, we introduce a special token, dubbed as <b> compass</b> token <b>c</b> along with each token in the prompt 
@@ -418,14 +423,48 @@
         precise object-centric orientation control in multi-object scenes. We train the encoder model and fine-tune the denoising U-Net with LoRA 
         on a synthetic dataset of scenes containing one or two 3D assets placed in diverse layouts on an empty floor. 
         </p>
+        <br>
+        <img src="assets/figures/method.svg" , style="border: 2px solid rgb(198, 198, 198); border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px; max-width: 500px; margin-bottom: 20px;">
     </div>
 
-    <div class="container blog main gray">
-        <img src="assets/figures/method.svg" , style="max-width: 400px; margin-bottom: 20px;">
+
+    <!-- Approach discussion and the approach figure -->
+    <div class="container blog main">
+        <h1 class="text" , style="text-align: center;">Coupled Attention Localization (CALL)</h1>
+        <p class="text" , style="text-align: justify;">
+        Directly training the compass token conditioning invariably results in attribute mixing between objects. In our case, the input orientation of a one object is wrongly transferred to other object. 
+        To address this, we constrain the cross-attention maps for both the compass token and the corresponding object token inside a given 2D bounding box. This enables tight association between the object and the compass tokens. 
+        Additionally, it enables additional control over the object location during generation. Notably, we provide only coarse bounding boxes as input that can also be randomly spawn during inference without user intervention. 
+        </p>
+    </div> 
+
+    <div class="container blog main">
+        <img src="assets/figures/call.png" , style="border: 2px solid rgb(198, 198, 198); border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px; max-width: 800px; margin-bottom: 20px;">
     </div>
 
 
-    <!-- Additional static results with multiple objects from the main paper -->
+    <!-- Code for block of multi-object generation and their orientation control.  -->
+    <!-- <div class="container blog main gray">
+        <div style="max-width: 1000px; margin: 0 auto 20px; text-align: justify;">
+            <p class ="text", style="text-align: justify">
+            Integrating call in Compass Control enables seamless generation of diverse multi-object scenes with accurate orientation control for individual objects. 
+            Further, the proposed framework generalizes exceptionally well, generating up to six-object scenes despite being trained on only up to two-object scenes.
+            </p>
+        </div>
+    
+        <div style="display: flex; justify-content: center; gap: 50px;">
+            <div style="flex: 1; display: flex; justify-content: center;">
+                <img src="assets/figures/animate-single1.gif" style="border: 2px solid rgb(198, 198, 198); border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px; max-width: 100%; height: auto;">
+            </div>
+            <div style="flex: 1; display: flex; justify-content: center;">
+                <img src="assets/figures/animate-single1.gif" style="border: 2px solid rgb(198, 198, 198); border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px; max-width: 100%; height: auto;">
+            </div>
+        </div>
+        <br>
+    </div> -->
+
+
+    <!-- Additional static results with multiple objects from the main paper
     <div class="container blog main">
         <h1 class="text" , style="text-align: center;">
             Interactive Results
@@ -438,14 +477,12 @@
             other objects.
         </p>
 
-
         <div class="columns-3">
             <div>
                 <img data-image-group="sedan__sedan__sedan__sedan"
                     src="clarity/images/sedan__sedan__sedan__sedan/001.jpg" alt="sedan__suv"
                     style="max-width: 300px; margin-bottom: 20px;">
 
-                <!-- Sliders Wrapper -->
                 <div class="sliders-wrapper">
                     <div class="dynamic-slider" data-slider-config='{
                      "prefix": "slider", 
@@ -464,7 +501,6 @@
                     src="clarity/images/sedan__fortuner/001.jpg" alt="sedan__fortuner"
                     style="max-width: 300px; margin-bottom: 20px;">
 
-                <!-- Sliders Wrapper -->
                 <div class="sliders-wrapper">
                     <div class="dynamic-slider" data-slider-config='{
                      "prefix": "slider", 
@@ -483,7 +519,6 @@
                     src="clarity/images/skoda__suv/001.jpg" alt="skoda__suv"
                     style="max-width: 300px; margin-bottom: 20px;">
 
-                <!-- Sliders Wrapper -->
                 <div class="sliders-wrapper">
                     <div class="dynamic-slider" data-slider-config='{
                      "prefix": "slider", 
@@ -496,35 +531,8 @@
                     </div>
                 </div>
             </div>
-
-            <!-- <div>
-                <img data-image-group="sedan__suv" src="clarity/images/sedan__suv/001__001.jpg" alt="sedan__suv"
-                    style="max-width: 300px; margin-bottom: 20px;">
-
-                <div class="sliders-wrapper">
-                    <div class="dynamic-slider" data-slider-config='{
-                     "prefix": "pose", 
-                     "min": 1, 
-                     "max": 6, 
-                     "default": 1, 
-                     "label": "sedan", 
-                     "imageGroup": "sedan__suv"
-                 }'>
-                    </div>
-
-                    <div class="dynamic-slider" data-slider-config='{
-                     "prefix": "accessory", 
-                     "min": 1, 
-                     "max": 6, 
-                     "default": 1, 
-                     "label": "suv", 
-                     "imageGroup": "sedan__suv"
-                 }'>
-                    </div>
-                </div>
-            </div> -->
         </div>
-    </div>
+    </div> -->
 
     <!-- <div class="container blog main gray">
         <img src="clarity/images/bicycle/001.jpg" , style="max-width: 400px; margin-bottom: 20px;">
@@ -552,24 +560,45 @@
         </p>
     </div>
 
-    <div class="container blog extra-large main gray">
+    <div class="container blog extra-large main">
         <img src="assets/figures/personlize-still.svg" ,>
         <!-- style="max-width: 1200px; margin-bottom: 20px;"> -->
     </div>
 
 
+    
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop">
+    <div class="bibtex">
+    <style>
+      .bibtex{
+    text-align: left;
+  }
+  
+  
+    </style>
+  
+  
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{rishubh2025compasscontrol,
+       title={Compass Control: Multi-Object Orientation Control for Text-to-Image Generation},
+       author={Rishubh Parihar, Vaibhav Agarwal, Sachidanand VS, R. Venkatesh Babu},
+       journal={Conference on Computer Vision and Pattern Recognition},
+       year={2025} 
+}
+    </code></pre>
 
-
-
-    <!-- Footer Page -->
-    <footer>
-        <div class="container">
-            <p>
-                This website is built on the <a href="https://shikun.io/projects/clarity">Clarity Template</a>, designed
-                by <a href="https://shikun.io/">Shikun Liu</a>.
-            </p>
-        </div>
-    </footer>
+    <br> 
+    <p class="text">
+        This website is built on the <a href="https://shikun.io/projects/clarity">Clarity Template</a>, designed
+        by <a href="https://shikun.io/">Shikun Liu</a>.
+    </p>
+  
+  </div>
+  </div>
+  
+  </section> 
+  
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
