@@ -67,115 +67,7 @@
         }
     </style>
 
-    <script>
-        // Global Dynamic Slider Initialization
-        // (function () {
-        //     // Utility function to create slider
-        //     function createDynamicSlider(container, config) {
-        //         // Default configuration
-        //         const defaultConfig = {
-        //             prefix: 'slider',
-        //             // min: 1,
-        //             // max: 10,
-        //             default: 1,
-        //             // imageFolder: 'images/',
-        //             onChange: null,
-        //             label: 'Value'
-        //         };
-
-        //         // Check for configuration in data attributes
-        //         const dataConfig = container.dataset.sliderConfig
-        //             ? JSON.parse(container.dataset.sliderConfig)
-        //             : {};
-
-        //         // Merge configurations: data attributes > passed config > defaults
-        //         const finalConfig = {
-        //             ...defaultConfig,
-        //             ...config,
-        //             ...dataConfig
-        //         };
-
-        //         // Create slider elements
-        //         const slider = document.createElement('input');
-        //         slider.type = 'range';
-        //         slider.min = finalConfig.min;
-        //         slider.max = finalConfig.max;
-        //         slider.value = finalConfig.default;
-        //         slider.step = 1;
-        //         slider.style.width = '80%';
-        //         slider.classList.add('dynamic-global-slider');
-
-        //         const valueDisplay = document.createElement('div');
-        //         valueDisplay.innerHTML = `${finalConfig.label}: <span class="slider-value">${finalConfig.default}</span>`;
-
-        //         const imageElement = document.createElement('img');
-        //         let imgName = finalConfig.default.toString()
-        //         imgName = imgName.padStart(3, "0")
-        //         // console.log("the fucking imgName is") 
-        //         // console.log(imgName) 
-        //         imageElement.src = `${finalConfig.imageFolder}${imgName}.jpg`;
-        //         // console.log("here")
-        //         // console.log(imageElement.src) 
-        //         imageElement.style.width = '80%';
-        //         imageElement.style.marginTop = '20px';
-        //         imageElement.classList.add('slider-image');
-        //         imageElement.alt = `${finalConfig.prefix} Image`;
-
-        //         // Append elements to container
-        //         container.innerHTML = ''; // Clear existing content
-        //         container.appendChild(slider);
-        //         container.appendChild(valueDisplay);
-        //         container.appendChild(imageElement);
-
-        //         // Add event listener
-        //         slider.addEventListener('input', function () {
-        //             const currentValue = slider.value;
-
-        //             // Update value display
-        //             valueDisplay.querySelector('.slider-value').textContent = currentValue;
-
-        //             // Update image source
-        //             let imgName = currentValue.toString()
-        //             imgName = imgName.padStart(3, "0")
-        //             // console.log("the fucking imgName is") 
-        //             // console.log(imgName) 
-        //             imageElement.src = `${finalConfig.imageFolder}${imgName}.jpg`;
-
-        //             // Call custom onChange handler if provided
-        //             if (typeof finalConfig.onChange === 'function') {
-        //                 finalConfig.onChange(currentValue);
-        //             }
-        //         });
-
-        //         // Return the slider for additional manipulation if needed
-        //         return slider;
-        //     }
-
-        //     // Global function to initialize sliders
-        //     window.initializeDynamicSlider = function (selector, config = {}) {
-        //         const containers = document.querySelectorAll(selector);
-
-        //         containers.forEach(container => {
-        //             // Check if already initialized
-        //             if (container.getAttribute('data-slider-initialized') === 'true') return;
-
-        //             // Mark as initialized
-        //             container.setAttribute('data-slider-initialized', 'true');
-        //             container.classList.add('dynamic-slider-container');
-
-        //             // Create slider using both HTML config and passed config
-        //             createDynamicSlider(container, config);
-        //         });
-        //     };
-
-        //     // Auto-initialize on DOM load
-        //     document.addEventListener('DOMContentLoaded', function () {
-        //         // Auto-initialize sliders, respecting their individual configurations
-        //         window.initializeDynamicSlider('.dynamic-slider');
-        //     });
-        // })();
-        // Global Dynamic Slider Initialization
-        // Global Dynamic Multi-Slider Image Control
+    <script> 
         (function () {
             // Utility function to create slider
             function createDynamicSlider(container, config) {
@@ -316,7 +208,7 @@
                 <div class="info">
                     <div>
                         <a href="mainpaper.pdf" class="button icon" style="border: 2px solid rgb(237, 223, 223); border-radius: 15px; box-shadow: 0px 0px 10px; background-color: rgba(255, 255, 255, 0.25); margin-bottom: 0;">Paper<i class="fa-solid fa-book-open"></i></a>
-                        <a href="https://rishubhpar.github.io/compasscontrol" class="button icon" style="border: 2px solid rgb(237, 223, 223); border-radius: 15px; box-shadow: 0px 0px 10px; background-color: rgba(255, 255, 255, 0.25); margin-bottom: 0;">Code (coming soon)<i class="fa-solid fa-code"></i></a>
+                        <a href="https://github.com/rishubhpar/compass-control-src" class="button icon" style="border: 2px solid rgb(237, 223, 223); border-radius: 15px; box-shadow: 0px 0px 10px; background-color: rgba(255, 255, 255, 0.25); margin-bottom: 0;">Code<i class="fa-solid fa-code"></i></a>
                     </div>
                 </div>
             </div>
